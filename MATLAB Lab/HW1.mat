@@ -1,0 +1,51 @@
+%% unit impulse
+t1=-10:1:5;
+b=0;
+x1=[b,b,b,1,b,b,b];
+%ploting the function x1
+figure(1);
+subplot('231');
+plot(t1,x1);
+stem(t1,x1);
+xlabel('Time');
+ylabel('Amplitude');
+title('Unit impulse signal');
+
+%% unit step signal
+t2=-5:1:25;
+x2=[zeros(1,5),ones(1,26)];
+
+subplot('232');
+plot(t2,x2);
+% stem(t2,x2);
+title('Unit Step signal');
+
+%% unit Ramp signal
+t3=-10:1:10;
+x3=t3;
+subplot('233');
+plot(t3,x3);
+% stem(t3,x3);
+title('Unit Ramp signal');
+
+%% Exponensial signal
+a=0.5;    %input('Enter The value of a:');
+t4=-5:0.001:5;
+x4=exp(-1*a*t4);
+subplot('234');
+plot(t4,x4);
+% stem(t4,x4);
+title('Exponensial Signal');
+
+%% Sinusoidal signal
+a=0.2;    %input('Enter The value of a:');
+f=0.1;
+t5=-5:0.1:5;
+x5=a*cos(2*pi*f*t5);
+y5=a*sin(2*pi*f*t5);
+subplot('235');
+plot(t5,x5);
+hold on;
+plot(t5,y5);
+stem(t5,x5);
+title('sinusoidal Signal');
